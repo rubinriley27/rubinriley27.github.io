@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>
+        Story 2
+    </title>
+  </head>
+  <body>
+    <script>
+
+      alert("Welcome to somewhere in Florida fancy car dealership. A salesman walks up to you.")
+      let name = prompt("He asks you \"Hey how are you, what is your name?\"")
+
+      alert("Nice to meet you. Here at this dealership we only have three types of cars. Which one do you want?")
+      let choice = prompt("1. A Ford F150 Platinum 2. A Nissan Altima 3. Or A Mclaren 650s Spyder")
+
+      if (choice === "1") {
+        // chose the Ford F150 Platinum
+
+        alert("The salesman says \"good choice if you are looking for practicality, not much else though.\"")
+        choice = prompt("Do you want to drive your new truck or trailer it home? 1. Drive 2. Trailer")
+
+        if (choice === "1") {
+          // chose to drive
+
+        alert("You start your drive back to your house, but there is a noise. The trucks engine goes boom.")
+        alert("You get hit by a truck and die. GAME OVER")
+
+        } else {
+          // chose to trailer
+
+        alert("You load the truck onto your trailer, not checking the weight capacity. You start your drive home and your trailer collapses.")
+        alert("You spin out and die. GAME OVER")
+        }
+
+      } else if (choice === "2") {
+        // chose the Nissan Altima
+
+        alert("The salesman says \"this is the most reliable car on the lot, its the best choice for families.\"")
+        choice = prompt("Do you want to drive your new car or trailer it home? 1. Drive 2. Trailer")
+
+        if (choice === "1") {
+          // chose to drive
+
+        alert("You drive your new car back to your house and go on with your life.")
+        alert("Congradulations on your new car. You Win By Not Dying")
+
+        } else {
+          // chose to trailer
+
+        alert("You load the car onto your trailer and drive home. You go on with your life")
+        alert("Congradulations on your new car. You Win By Not Dying")
+        }
+      } else {
+        // chose the Mclaren 650s Spyder
+
+        alert("The salesman says \"OOh a fancy man, this is the nicest car on the lot. Its fast but not very practical or reliable.\"")
+        choice = prompt("Do you want to drive your new car or trailer it home? 1. Drive 2. Trailer")
+
+        if (choice === "1") {
+          // chose to drive
+
+        alert("You start your drive back to your house, but you hear a scraping noise. The car's fuel tank ruptures and goes boom.")
+        alert("You are engulfed in flames and die. GAME OVER")
+
+        } else {
+          // chose to trailer
+
+        alert("You load the car onto your trailer and start your drive home. Two black cars start chasing you and bump into your vehicle over and over")
+        alert("While crossing a railroad track, a train comes out of nowhere and you die. GAME OVER")
+        }
+      }
+
+    </script>
+  </body>
+</html>
