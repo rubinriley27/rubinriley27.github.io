@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            Loops
+        </title>
+    </head>
+    <body>
+        <script>
+
+            //          *
+            //         ***
+            //        *****
+            //       *******
+            //      *********
+            //     ***********
+            //    *************
+            //   ***************
+            //  *****************
+            // *******************
+
+            let stars = 1
+
+            let out = ""
+            while (stars < 11) {
+                out += " ".repeat(11 - stars);
+                out += "*".repeat (2 * stars - 1)
+                out += "\n";
+                stars += 1;
+            }
+            console.log(out);
+        </script>
+    </body>
+</html>

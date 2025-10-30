@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            Spooky
+        </title>
+    </head>
+    <body>
+        <div id="spooky">
+            <div id="inner">👻</div>
+        </div>
+
+        <style>
+            * {
+                inset: 0;
+                margin: 0;
+                padding: 0;
+
+            }
+            body {
+                background-image: url("https://wallpapercave.com/wp/wp9970681.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 100dvw;
+                height: 100dvh;
+            }
+
+            #spooky {
+                position: absolute;
+                top : 50dvh;
+                left: 50dvw;
+                
+                transform-origin: center;
+                font-size: 125px;
+                width: fit-content;
+                height: fit-content;
+                animation: float 10s infinite ease;
+            }
+
+            #inner {
+                animation: vertical 2s infinite;
+            }
+
+            @keyframes float {
+                0% {
+                    transform: translate(-50%, -50%) translate( -50dvw)
+                }
+                25% {
+                    transform: translate(-50%, -50%)
+                }
+
+                50% {
+                    transform: translate(-50%, -50%) translate( 50dvw)
+                }
+
+                75% {
+                    transform: translate(-50%, -50%)
+                }
+
+                100% {
+                    transform: translate(-50%, -50%) translate( -50dvw)
+                }
+            }
+
+            @keyframes vertical {
+                0% {
+                    transform: translate(-50%, -50%) translate(0, -50dvh)
+                }
+                25% {
+                    transform: translate(-50%, -50%)
+                }
+
+                50% {
+                    transform: translate(-50%, -50%) translate(0, 50dvh)
+                }
+
+                75% {
+                    transform: translate(-50%, -50%)
+                }
+
+                100% {
+                    transform: translate(-50%, -50%) translate(0, -50dvh)
+                }
+            }
