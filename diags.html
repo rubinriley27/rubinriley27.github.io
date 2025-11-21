@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <script>
+
+            const rows = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+            const cols = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"].reverse()
+            const n = 4
+
+            
+            let out = ""
+            for(let j = 0; j < cols.length - n + 1; j ++){
+                for(let i = 0; i < rows.length - n + 1; i ++){
+                    const cells = [ ]
+                    for(let k = 0; k < n; k ++)
+                        cells.push(
+                            rows[i + k] +
+                            cols[j + k]
+                        )
+                    out += `check(${cells.join()})\n`
+                }
+                out += "\n"
+            }
+            console.log(out)
+
+        </script>
+    </body>
+</html>

@@ -14,5 +14,16 @@
             <p><textarea name="comment" required placeholder="comment"></textarea></p>
             <p><input name="submit" type="submit" value="submit"></p>
         </form>
+        <script>
+
+            const button = document.querrySelector("button");
+            
+            button.addEventListener("click", toggleDarkMode)
+
+            function toggleDarkMode() {
+                document.documentElement.classList.toggle("dark");
+            }
+
+        </script>
     </body>
 </html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            Thanksgiving
+        </title>
+    </head>
+    <body>
+        <h1>I am thankful for Family<br> I am thankful for Food<br> I am thankful for Being Alive</h1>
+        <div id="thanks">
+            <div id="inner">Thanksgiving</div>
+        </div>
+
+        <style>
+            * {
+                inset: 0;
+                margin: 0;
+                padding: 0;
+
+            }
+            body {
+                background-image: url("https://wallpaperaccess.com/full/20942.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 100dvw;
+                height: 100dvh;
+            }
+
+            #thanks {
+                position: absolute;
+                top : 50dvh;
+                left: 50dvw;
+                
+                transform-origin: center;
+                font-size: 65px;
+                width: fit-content;
+                height: fit-content;
+                animation: float 60s infinite ease;
+            }
+
+            #inner {
+                animation: vertical 30s infinite;
+            }
+
+            @keyframes float {
+                0% {
+                    transform: translate(-50%, -50%) translate( -50dvw)
+                }
+                25% {
+                    transform: translate(-50%, -50%)
+                }
+
+                50% {
+                    transform: translate(-50%, -50%) translate( 50dvw)
+                }
+
+                75% {
+                    transform: translate(-50%, -50%)
+                }
+
+                100% {
+                    transform: translate(-50%, -50%) translate( -50dvw)
+                }
+            }
+
+            @keyframes vertical {
+                0% {
+                    transform: translate(-50%, -50%) translate(0, -50dvh)
+                }
+                25% {
+                    transform: translate(-50%, -50%)
+                }
+
+                50% {
+                    transform: translate(-50%, -50%) translate(0, 50dvh)
+                }
+
+                75% {
+                    transform: translate(-50%, -50%)
+                }
+
+                100% {
+                    transform: translate(-50%, -50%) translate(0, -50dvh)
+                }
+            }

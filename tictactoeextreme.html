@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EXTREME Tic Tac Toe</title>
+  </head>
+  <body>
+
+    <style>
+      * {
+        inset: 0;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        width : 100dvw;
+        height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .board {
+        display: grid;
+        width : fit-content;
+        height: fit-content;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        border: black 2px solid;
+        box-shadow: black 8px 8px;
+      }
+
+      .board>a {
+        width : 60px;
+        height: 60px;
+        border: black 1px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 45px;
+        font-family: sans-serif;
+        font-weight: bold;
+        user-select: none;
+        cursor: pointer;
+      }
+
+      .x {
+        color: blue;
+        cursor: default;
+        font-weight: bold;
+      }
+
+      .o {
+        color: red;
+        cursor: default;
+        font-weight: bold;
+      }
+
+      h1 {
+        font-family: sans-serif;
+        font-size: 32px;
+      }
+
+      #info {
+        font-family: sans-serif;
+        font-size: 18px;
+        margin-top: 18px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      button {
+        background: white;
+        border: 2px solid black;
+        color: black;
+        border-radius: 1rem;
+        padding-left: 8px;
+        padding-right: 8px;
+        font-size: 18px;
+        font-family: sans-serif;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: black;
+        color: white;
+      }
+    </style>
+
+    <div class="container">
+      <h1>Tic-Tac-Toe EXTREME</h1>
+      <div class="board">
+        <a id="a1"></a>
+        <a id="a2"></a>
+        <a id="a3"></a>
+        <a id="a4"></a>
+        <a id="a5"></a>
+        <a id="a6"></a>
+        <a id="a7"></a>
+        <a id="a8"></a>
+        <a id="a9"></a>
+        <a id="a10"></a>
+        
+        <a id="b1"></a>
+        <a id="b2"></a>
+        <a id="b3"></a>
+        <a id="b4"></a>
+        <a id="b5"></a>
+        <a id="b6"></a>
+        <a id="b7"></a>
+        <a id="b8"></a>
+        <a id="b9"></a>
+        <a id="b10"></a>
+        
+        <a id="c1"></a>
+        <a id="c2"></a>
+        <a id="c3"></a>
+        <a id="c4"></a>
+        <a id="c5"></a>
+        <a id="c6"></a>
+        <a id="c7"></a>
+        <a id="c8"></a>
+        <a id="c9"></a>
+        <a id="c10"></a>
+        
+        <a id="d1"></a>
+        <a id="d2"></a>
+        <a id="d3"></a>
+        <a id="d4"></a>
+        <a id="d5"></a>
+        <a id="d6"></a>
+        <a id="d7"></a>
+        <a id="d8"></a>
+        <a id="d9"></a>
+        <a id="d10"></a>
+
+        <a id="e1"></a>
+        <a id="e2"></a>
+        <a id="e3"></a>
+        <a id="e4"></a>
+        <a id="e5"></a>
+        <a id="e6"></a>
+        <a id="e7"></a>
+        <a id="e8"></a>
+        <a id="e9"></a>
+        <a id="e10"></a>
+        
+        <a id="f1"></a>
+        <a id="f2"></a>
+        <a id="f3"></a>
+        <a id="f4"></a>
+        <a id="f5"></a>
+        <a id="f6"></a>
+        <a id="f7"></a>
+        <a id="f8"></a>
+        <a id="f9"></a>
+        <a id="f10"></a>
+        
+        <a id="g1"></a>
+        <a id="g2"></a>
+        <a id="g3"></a>
+        <a id="g4"></a>
+        <a id="g5"></a>
+        <a id="g6"></a>
+        <a id="g7"></a>
+        <a id="g8"></a>
+        <a id="g9"></a>
+        <a id="g10"></a>
+        
+        <a id="h1"></a>
+        <a id="h2"></a>
+        <a id="h3"></a>
+        <a id="h4"></a>
+        <a id="h5"></a>
+        <a id="h6"></a>
+        <a id="h7"></a>
+        <a id="h8"></a>
+        <a id="h9"></a>
+        <a id="h10"></a>
+
+        <a id="i1"></a>
+        <a id="i2"></a>
+        <a id="i3"></a>
+        <a id="i4"></a>
+        <a id="i5"></a>
+        <a id="i6"></a>
+        <a id="i7"></a>
+        <a id="i8"></a>
+        <a id="i9"></a>
+        <a id="i10"></a>
+        
+        <a id="j1"></a>
+        <a id="j2"></a>
+        <a id="j3"></a>
+        <a id="j4"></a>
+        <a id="j5"></a>
+        <a id="j6"></a>
+        <a id="j7"></a>
+        <a id="j8"></a>
+        <a id="j9"></a>
+        <a id="j10"></a>
+      </div>
+      <span id="info"><span class="x">Player 1</span>, click on an empty cell to place an <span class="x">X</span></span>
+      <h2>Main Page</h2>
+        <a href="project_index.html">Back to Project Index</a>
+    </div>
+
+    <script>
+      const info = document.getElementById("info")
+
+      const a1 = document.getElementById("a1")
+      const a2 = document.getElementById("a2")
+      const a3 = document.getElementById("a3")
+      const a4 = document.getElementById("a4")
+      const a5 = document.getElementById("a5")
+      const a6 = document.getElementById("a6")
+      const a7 = document.getElementById("a7")
+      const a8 = document.getElementById("a8")
+      const a9 = document.getElementById("a9")
+      const a10 = document.getElementById("a10")
+
+      const b1 = document.getElementById("b1")
+      const b2 = document.getElementById("b2")
+      const b3 = document.getElementById("b3")
+      const b4 = document.getElementById("b4")
+      const b5 = document.getElementById("b5")
+      const b6 = document.getElementById("b6")
+      const b7 = document.getElementById("b7")
+      const b8 = document.getElementById("b8")
+      const b9 = document.getElementById("b9")
+      const b10 = document.getElementById("b10")
+
+      const c1 = document.getElementById("c1")
+      const c2 = document.getElementById("c2")
+      const c3 = document.getElementById("c3")
+      const c4 = document.getElementById("c4")
+      const c5 = document.getElementById("c5")
+      const c6 = document.getElementById("c6")
+      const c7 = document.getElementById("c7")
+      const c8 = document.getElementById("c8")
+      const c9 = document.getElementById("c9")
+      const c10 = document.getElementById("c10")
+
+      const d1 = document.getElementById("d1")
+      const d2 = document.getElementById("d2")
+      const d3 = document.getElementById("d3")
+      const d4 = document.getElementById("d4")
+      const d5 = document.getElementById("d5")
+      const d6 = document.getElementById("d6")
+      const d7 = document.getElementById("d7")
+      const d8 = document.getElementById("d8")
+      const d9 = document.getElementById("d9")
+      const d10 = document.getElementById("d10")
+
+      const e1 = document.getElementById("e1")
+      const e2 = document.getElementById("e2")
+      const e3 = document.getElementById("e3")
+      const e4 = document.getElementById("e4")
+      const e5 = document.getElementById("e5")
+      const e6 = document.getElementById("e6")
+      const e7 = document.getElementById("e7")
+      const e8 = document.getElementById("e8")
+      const e9 = document.getElementById("e9")
+      const e10 = document.getElementById("e10")
+
+      const f1 = document.getElementById("f1")
+      const f2 = document.getElementById("f2")
+      const f3 = document.getElementById("f3")
+      const f4 = document.getElementById("f4")
+      const f5 = document.getElementById("f5")
+      const f6 = document.getElementById("f6")
+      const f7 = document.getElementById("f7")
+      const f8 = document.getElementById("f8")
+      const f9 = document.getElementById("f9")
+      const f10 = document.getElementById("f10")
+
+      const g1 = document.getElementById("g1")
+      const g2 = document.getElementById("g2")
+      const g3 = document.getElementById("g3")
+      const g4 = document.getElementById("g4")
+      const g5 = document.getElementById("g5")
+      const g6 = document.getElementById("g6")
+      const g7 = document.getElementById("g7")
+      const g8 = document.getElementById("g8")
+      const g9 = document.getElementById("g9")
+      const g10 = document.getElementById("g10")
+
+      const h1 = document.getElementById("h1")
+      const h2 = document.getElementById("h2")
+      const h3 = document.getElementById("h3")
+      const h4 = document.getElementById("h4")
+      const h5 = document.getElementById("h5")
+      const h6 = document.getElementById("h6")
+      const h7 = document.getElementById("h7")
+      const h8 = document.getElementById("h8")
+      const h9 = document.getElementById("h9")
+      const h10 = document.getElementById("h10")
+
+      const i1 = document.getElementById("i1")
+      const i2 = document.getElementById("i2")
+      const i3 = document.getElementById("i3")
+      const i4 = document.getElementById("i4")
+      const i5 = document.getElementById("i5")
+      const i6 = document.getElementById("i6")
+      const i7 = document.getElementById("i7")
+      const i8 = document.getElementById("i8")
+      const i9 = document.getElementById("i9")
+      const i10 = document.getElementById("i10")
+
+      const j1 = document.getElementById("j1")
+      const j2 = document.getElementById("j2")
+      const j3 = document.getElementById("j3")
+      const j4 = document.getElementById("j4")
+      const j5 = document.getElementById("j5")
+      const j6 = document.getElementById("j6")
+      const j7 = document.getElementById("j7")
+      const j8 = document.getElementById("j8")
+      const j9 = document.getElementById("j9")
+      const j10 = document.getElementById("j10")
+      
+
+      let turn = 0
+
+      function onClick(e) {
+        if (turn < 0 || e.target.classList.length > 0)
+          return;
+
+        // turn is odd
+        if (turn & 1) {
+          e.target.innerHTML = "O"
+          e.target.classList.remove("x")
+          e.target.classList.add   ("o")
+          info.innerHTML = "<span class='x'>Player 1</span> click on an empty cell to place an <span class='x'>X</span>"
+        } else {
+          e.target.innerHTML = "X"
+          e.target.classList.remove("o")
+          e.target.classList.add   ("x")
+          info.innerHTML = "<span class='o'>Player 2</span> click on an empty cell to place an <span class='o'>O</span>"
+        }
+
+        turn += 1
+
+        // check row a        
+        check(a1, a2, a3, a4)
+        check(a2, a3, a4, a5)
+        check(a3, a4, a5, a6)
+        check(a4, a5, a6, a7)
+        check(a5, a6, a7, a8)
+        check(a6, a7, a8, a9)
+        check(a7, a8, a9, a10)
+
+        // check row b      
+        check(b1, b2, b3, b4)
+        check(b2, b3, b4, b5)
+        check(b3, b4, b5, b6)
+        check(b4, b5, b6, b7)
+        check(b5, b6, b7, b8)
+        check(b6, b7, b8, b9)
+        check(b7, b8, b9, b10)
+
+        // check row c      
+        check(c1, c2, c3, c4)
+        check(c2, c3, c4, c5)
+        check(c3, c4, c5, c6)
+        check(c4, c5, c6, c7)
+        check(c5, c6, c7, c8)
+        check(c6, c7, c8, c9)
+        check(c7, c8, c9, c10)
+
+        // check row d        
+        check(d1, d2, d3, d4)
+        check(d2, d3, d4, d5)
+        check(d3, d4, d5, d6)
+        check(d4, d5, d6, d7)
+        check(d5, d6, d7, d8)
+        check(d6, d7, d8, d9)
+        check(d7, d8, d9, d10)
+
+        // check row e        
+        check(e1, e2, e3, e4)
+        check(e2, e3, e4, e5)
+        check(e3, e4, e5, e6)
+        check(e4, e5, e6, e7)
+        check(e5, e6, e7, e8)
+        check(e6, e7, e8, e9)
+        check(e7, e8, e9, e10)
+
+        // check row f        
+        check(f1, f2, f3, f4)
+        check(f2, f3, f4, f5)
+        check(f3, f4, f5, f6)
+        check(f4, f5, f6, f7)
+        check(f5, f6, f7, f8)
+        check(f6, f7, f8, f9)
+        check(f7, f8, f9, f10)
+
+        // check row g        
+        check(g1, g2, g3, g4)
+        check(g2, g3, g4, g5)
+        check(g3, g4, g5, g6)
+        check(g4, g5, g6, g7)
+        check(g5, g6, g7, g8)
+        check(g6, g7, g8, g9)
+        check(g7, g8, g9, g10)
+
+        // check row h        
+        check(h1, h2, h3, h4)
+        check(h2, h3, h4, h5)
+        check(h3, h4, h5, h6)
+        check(h4, h5, h6, h7)
+        check(h5, h6, h7, h8)
+        check(h6, h7, h8, h9)
+        check(h7, h8, h9, h10)
+
+        // check row i        
+        check(i1, i2, i3, i4)
+        check(i2, i3, i4, i5)
+        check(i3, i4, i5, i6)
+        check(i4, i5, i6, i7)
+        check(i5, i6, i7, i8)
+        check(i6, i7, i8, i9)
+        check(i7, i8, i9, i10)
+
+        // check row j        
+        check(j1, j2, j3, j4)
+        check(j2, j3, j4, j5)
+        check(j3, j4, j5, j6)
+        check(j4, j5, j6, j7)
+        check(j5, j6, j7, j8)
+        check(j6, j7, j8, j9)
+        check(j7, j8, j9, j10)
+
+        // check column 1
+        check(a1, b1, c1, d1)
+        check(b1, c1, d1, e1)
+        check(c1, d1, e1, f1)
+        check(d1, e1, f1, g1)
+        check(e1, f1, g1, h1)
+        check(f1, g1, h1, i1)
+        check(g1, h1, i1, j1)
+
+        // check column 2
+        check(a2, b2, c2, d2)
+        check(b2, c2, d2, e2)
+        check(c2, d2, e2, f2)
+        check(d2, e2, f2, g2)
+        check(e2, f2, g2, h2)
+        check(f2, g2, h2, i2)
+        check(g2, h2, i2, j2)
+
+        // check column 3
+        check(a3, b3, c3, d3)
+        check(b3, c3, d3, e3)
+        check(c3, d3, e3, f3)
+        check(d3, e3, f3, g3)
+        check(e3, f3, g3, h3)
+        check(f3, g3, h3, i3)
+        check(g3, h3, i3, j3)
+
+        // check column 4
+        check(a4, b4, c4, d4)
+        check(b4, c4, d4, e4)
+        check(c4, d4, e4, f4)
+        check(d4, e4, f4, g4)
+        check(e4, f4, g4, h4)
+        check(f4, g4, h4, i4)
+        check(g4, h4, i4, j4)
+
+        // check column 5
+        check(a5, b5, c5, d5)
+        check(b5, c5, d5, e5)
+        check(c5, d5, e5, f5)
+        check(d5, e5, f5, g5)
+        check(e5, f5, g5, h5)
+        check(f5, g5, h5, i5)
+        check(g5, h5, i5, j5)
+
+        // check column 6
+        check(a6, b6, c6, d6)
+        check(b6, c6, d6, e6)
+        check(c6, d6, e6, f6)
+        check(d6, e6, f6, g6)
+        check(e6, f6, g6, h6)
+        check(f6, g6, h6, i6)
+        check(g6, h6, i6, j6)
+
+        // check column 7
+        check(a7, b7, c7, d7)
+        check(b7, c7, d7, e7)
+        check(c7, d7, e7, f7)
+        check(d7, e7, f7, g7)
+        check(e7, f7, g7, h7)
+        check(f7, g7, h7, i7)
+        check(g7, h7, i7, j7)
+
+        // check column 8
+        check(a8, b8, c8, d8)
+        check(b8, c8, d8, e8)
+        check(c8, d8, e8, f8)
+        check(d8, e8, f8, g8)
+        check(e8, f8, g8, h8)
+        check(f8, g8, h8, i8)
+        check(g8, h8, i8, j8)
+
+        // check column 9
+        check(a9, b9, c9, d9)
+        check(b9, c9, d9, e9)
+        check(c9, d9, e9, f9)
+        check(d9, e9, f9, g9)
+        check(e9, f9, g9, h9)
+        check(f9, g9, h9, i9)
+        check(g9, h9, i9, j9)
+
+        // check column 10
+        check(a10, b10, c10, d10)
+        check(b10, c10, d10, e10)
+        check(c10, d10, e10, f10)
+        check(d10, e10, f10, g10)
+        check(e10, f10, g10, h10)
+        check(f10, g10, h10, i10)
+        check(g10, h10, i10, j10)
+
+        // nw - se diagnols
+        check(a1,b2,c3,d4)
+        check(b1,c2,d3,e4)
+        check(c1,d2,e3,f4)
+        check(d1,e2,f3,g4)
+        check(e1,f2,g3,h4)
+        check(f1,g2,h3,i4)
+        check(g1,h2,i3,j4)
+
+        check(a2,b3,c4,d5)
+        check(b2,c3,d4,e5)
+        check(c2,d3,e4,f5)
+        check(d2,e3,f4,g5)
+        check(e2,f3,g4,h5)
+        check(f2,g3,h4,i5)
+        check(g2,h3,i4,j5)
+
+        check(a3,b4,c5,d6)
+        check(b3,c4,d5,e6)
+        check(c3,d4,e5,f6)
+        check(d3,e4,f5,g6)
+        check(e3,f4,g5,h6)
+        check(f3,g4,h5,i6)
+        check(g3,h4,i5,j6)
+
+        check(a4,b5,c6,d7)
+        check(b4,c5,d6,e7)
+        check(c4,d5,e6,f7)
+        check(d4,e5,f6,g7)
+        check(e4,f5,g6,h7)
+        check(f4,g5,h6,i7)
+        check(g4,h5,i6,j7)
+
+        check(a5,b6,c7,d8)
+        check(b5,c6,d7,e8)
+        check(c5,d6,e7,f8)
+        check(d5,e6,f7,g8)
+        check(e5,f6,g7,h8)
+        check(f5,g6,h7,i8)
+        check(g5,h6,i7,j8)
+
+        check(a6,b7,c8,d9)
+        check(b6,c7,d8,e9)
+        check(c6,d7,e8,f9)
+        check(d6,e7,f8,g9)
+        check(e6,f7,g8,h9)
+        check(f6,g7,h8,i9)
+        check(g6,h7,i8,j9)
+
+        check(a7,b8,c9,d10)
+        check(b7,c8,d9,e10)
+        check(c7,d8,e9,f10)
+        check(d7,e8,f9,g10)
+        check(e7,f8,g9,h10)
+        check(f7,g8,h9,i10)
+        check(g7,h8,i9,j10)
+
+        // ne - sw diagnols
+        check(a10,b9,c8,d7)
+        check(b10,c9,d8,e7)
+        check(c10,d9,e8,f7)
+        check(d10,e9,f8,g7)
+        check(e10,f9,g8,h7)
+        check(f10,g9,h8,i7)
+        check(g10,h9,i8,j7)
+
+        check(a9,b8,c7,d6)
+        check(b9,c8,d7,e6)
+        check(c9,d8,e7,f6)
+        check(d9,e8,f7,g6)
+        check(e9,f8,g7,h6)
+        check(f9,g8,h7,i6)
+        check(g9,h8,i7,j6)
+
+        check(a8,b7,c6,d5)
+        check(b8,c7,d6,e5)
+        check(c8,d7,e6,f5)
+        check(d8,e7,f6,g5)
+        check(e8,f7,g6,h5)
+        check(f8,g7,h6,i5)
+        check(g8,h7,i6,j5)
+
+        check(a7,b6,c5,d4)
+        check(b7,c6,d5,e4)
+        check(c7,d6,e5,f4)
+        check(d7,e6,f5,g4)
+        check(e7,f6,g5,h4)
+        check(f7,g6,h5,i4)
+        check(g7,h6,i5,j4)
+
+        check(a6,b5,c4,d3)
+        check(b6,c5,d4,e3)
+        check(c6,d5,e4,f3)
+        check(d6,e5,f4,g3)
+        check(e6,f5,g4,h3)
+        check(f6,g5,h4,i3)
+        check(g6,h5,i4,j3)
+
+        check(a5,b4,c3,d2)
+        check(b5,c4,d3,e2)
+        check(c5,d4,e3,f2)
+        check(d5,e4,f3,g2)
+        check(e5,f4,g3,h2)
+        check(f5,g4,h3,i2)
+        check(g5,h4,i3,j2)
+
+        check(a4,b3,c2,d1)
+        check(b4,c3,d2,e1)
+        check(c4,d3,e2,f1)
+        check(d4,e3,f2,g1)
+        check(e4,f3,g2,h1)
+        check(f4,g3,h2,i1)
+        check(g4,h3,i2,j1)
+
+        if (turn > 99) {
+          info.innerHTML = "Cat's Game, No One Wins. <button onclick='resetAll()'>Play Again</button>"
+          turn = -1
+        }
+      }
+
+      function check(a, b, c, d) {
+        if (
+          a.innerText !== "" &&
+          a.innerText === b.innerText &&
+          b.innerText === c.innerText &&
+          c.innerText === d.innerText
+        ) {
+          if (turn & 1) {
+            info.innerHTML = "<span class='x'>Player 1</span> Wins! <button onclick='resetAll()'>Play Again</button>"
+            a.innerHTML = "🤞"
+            b.innerHTML = "🤞"
+            c.innerHTML = "🤞"
+            d.innerHTML = "🤞"
+          } else {
+            info.innerHTML = "<span class='o'>Player 2</span> Wins! <button onclick='resetAll()'>Play Again</button>"
+            a.innerHTML = "👌"
+            b.innerHTML = "👌"
+            c.innerHTML = "👌"
+            d.innerHTML = "👌"
+          }
+          turn = -1
+        }
+      }
+
+      function reset(a) {
+        a.classList.remove("x")
+        a.classList.remove("o")
+        a.innerHTML = ""
+      }
+
+      function resetAll() {
+        info.innerHTML = "<span class='x'>Player 1</span> click on an empty cell to place an <span class='x'>X</span>"
+        reset(a1); reset(a2); reset(a3); reset(a4);reset(a5); reset(a6); reset(a7); reset(a8); reset(a9); reset(a10);
+        reset(b1); reset(b2); reset(b3); reset(b4);reset(b5); reset(b6); reset(b7); reset(b8); reset(b9); reset(b10);
+        reset(c1); reset(c2); reset(c3); reset(c4);reset(c5); reset(c6); reset(c7); reset(c8); reset(c9); reset(c10);
+        reset(d1); reset(d2); reset(d3); reset(d4);reset(d5); reset(d6); reset(d7); reset(d8); reset(d9); reset(d10);
+        reset(e1); reset(e2); reset(e3); reset(e4);reset(e5); reset(e6); reset(e7); reset(e8); reset(e9); reset(e10);
+        reset(f1); reset(f2); reset(f3); reset(f4);reset(f5); reset(f6); reset(f7); reset(f8); reset(f9); reset(f10);
+        reset(g1); reset(g2); reset(g3); reset(g4);reset(g5); reset(g6); reset(g7); reset(g8); reset(g9); reset(g10);
+        reset(h1); reset(h2); reset(h3); reset(h4);reset(h5); reset(h6); reset(h7); reset(h8); reset(h9); reset(h10);
+        reset(i1); reset(i2); reset(i3); reset(i4);reset(i5); reset(i6); reset(i7); reset(i8); reset(i9); reset(i10);
+        reset(j1); reset(j2); reset(j3); reset(j4);reset(j5); reset(j6); reset(j7); reset(j8); reset(j9); reset(j10);
+        turn = 0;
+      }
+
+      a1.onclick = onClick
+      a2.onclick = onClick
+      a3.onclick = onClick
+      a4.onclick = onClick
+      a5.onclick = onClick
+      a6.onclick = onClick
+      a7.onclick = onClick
+      a8.onclick = onClick
+      a9.onclick = onClick
+      a10.onclick = onClick
+      
+      b1.onclick = onClick
+      b2.onclick = onClick
+      b3.onclick = onClick
+      b4.onclick = onClick
+      b5.onclick = onClick
+      b6.onclick = onClick
+      b7.onclick = onClick
+      b8.onclick = onClick
+      b9.onclick = onClick
+      b10.onclick = onClick
+
+      c1.onclick = onClick
+      c2.onclick = onClick
+      c3.onclick = onClick
+      c4.onclick = onClick
+      c5.onclick = onClick
+      c6.onclick = onClick
+      c7.onclick = onClick
+      c8.onclick = onClick
+      c9.onclick = onClick
+      c10.onclick = onClick
+
+      d1.onclick = onClick
+      d2.onclick = onClick
+      d3.onclick = onClick
+      d4.onclick = onClick
+      d5.onclick = onClick
+      d6.onclick = onClick
+      d7.onclick = onClick
+      d8.onclick = onClick
+      d9.onclick = onClick
+      d10.onclick = onClick
+
+      e1.onclick = onClick
+      e2.onclick = onClick
+      e3.onclick = onClick
+      e4.onclick = onClick
+      e5.onclick = onClick
+      e6.onclick = onClick
+      e7.onclick = onClick
+      e8.onclick = onClick
+      e9.onclick = onClick
+      e10.onclick = onClick
+
+      f1.onclick = onClick
+      f2.onclick = onClick
+      f3.onclick = onClick
+      f4.onclick = onClick
+      f5.onclick = onClick
+      f6.onclick = onClick
+      f7.onclick = onClick
+      f8.onclick = onClick
+      f9.onclick = onClick
+      f10.onclick = onClick
+
+      g1.onclick = onClick
+      g2.onclick = onClick
+      g3.onclick = onClick
+      g4.onclick = onClick
+      g5.onclick = onClick
+      g6.onclick = onClick
+      g7.onclick = onClick
+      g8.onclick = onClick
+      g9.onclick = onClick
+      g10.onclick = onClick
+
+      h1.onclick = onClick
+      h2.onclick = onClick
+      h3.onclick = onClick
+      h4.onclick = onClick
+      h5.onclick = onClick
+      h6.onclick = onClick
+      h7.onclick = onClick
+      h8.onclick = onClick
+      h9.onclick = onClick
+      h10.onclick = onClick
+
+      i1.onclick = onClick
+      i2.onclick = onClick
+      i3.onclick = onClick
+      i4.onclick = onClick
+      i5.onclick = onClick
+      i6.onclick = onClick
+      i7.onclick = onClick
+      i8.onclick = onClick
+      i9.onclick = onClick
+      i10.onclick = onClick
+
+      j1.onclick = onClick
+      j2.onclick = onClick
+      j3.onclick = onClick
+      j4.onclick = onClick
+      j5.onclick = onClick
+      j6.onclick = onClick
+      j7.onclick = onClick
+      j8.onclick = onClick
+      j9.onclick = onClick
+      j10.onclick = onClick
+
+    </script>
+
+  </body>
+</html>
