@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Final Project</title>
+    </head>
+    <body>
+        <h1>Top Christmas List Items</h1>
+        <div class="list">
+            <ol>
+                <li>The rest of the trim for my truck</li>
+                <li>Battlefield 6</li>
+                <li>A center console with cupholders for my truck</li>
+            </ol>
+        </div>
+        <div class="container">
+            <h2>Change Background</h2>
+            <div class="links">
+                <a id="change-background">Background</a>            
+            </div>
+        </div>
+
+        <div class="festive" style="top:50dvh; left:10dvw; animation-delay: -1.5s;">❄️</div>
+        <div class="festive" style="top:50dvh; left:15dvw; animation-delay: -5s;">❄️</div>
+        <div class="festive" style="top:50dvh; left:20dvw; animation-delay: -6.5s;">❄️</div>
+        <div class="festive" style="top:50dvh; left:25dvw; animation-delay: -8s;">❄️</div>
+        <div class="festive" style="top:50dvh; left:30dvw; animation-delay: -4.5s;">❄️</div>
+        <div class="festive" style="top:50dvh; left:35dvw; animation-delay: -7s;">❄️</div>
+        <div class="festive" style="top:50dvh; left:40dvw; animation-delay: -8.5s;">❄️</div>
+        <div class="festive" style="top:50dvh; left:45dvw; animation-delay: -1s;">❄️</div>
+        <div class="festive" style="top:50dvh; left:50dvw; animation-delay: -5.5s;">❄️</div>
+        <div class="festive" style="top:50dvh; left:55dvw; animation-delay: -2s;">❄️</div>
+        <div class="festive" style="top:50dvh; left:60dvw; animation-delay: -3.5s;">❄️</div>
+        <div class="festive" style="top:50dvh; left:65dvw; animation-delay: -9s;">❄️</div>
+        <div class="festive" style="top:50dvh; left:70dvw; animation-delay: -7.5s;">❄️</div>
+        <div class="festive" style="top:50dvh; left:75dvw; animation-delay: -4s;">❄️</div>
+        <div class="festive" style="top:50dvh; left:80dvw; animation-delay: -2.5s;">❄️</div>
+        <div class="festive" style="top:50dvh; left:85dvw; animation-delay: -6s;">❄️</div>
+        <div class="festive" style="top:50dvh; left:90dvw; animation-delay: -9.5s;">❄️</div>
+        <div class="festive" style="top:50dvh; left:95dvw; animation-delay: -3s;">❄️</div>
+
+        <script>
+            const button = document.getElementById("change-background")
+
+            function onClick() {
+                document.body.classList.toggle("background")
+            }
+
+            button.onclick = onClick
+        </script>
+
+        <style>
+            * {
+                inset: 0;
+                margin: 0;
+                padding: 0;
+
+            }
+            body {
+                background-image: url("https://wallpapers.com/images/featured/winter-cmgw5mq23dasvttz.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 100dvw;
+                height: 100dvh;
+                overflow: hidden;
+            }
+
+            .background {
+                background-image: url("https://wallpaperaccess.com/full/658934.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .festive {
+                position: absolute;
+                
+                transform-origin: center;
+                font-size: 50px;
+                width: fit-content;
+                height: fit-content;
+                animation: vertical 6s infinite linear;
+            }
+
+            @keyframes vertical {
+                0% {
+                    transform: translate(-50%, -50%) translate(0, -51dvh)
+                }
+
+                100% {
+                    transform: translate(-50%, -50%) translate(0, 51dvh)
+                }
+            }
+            
+        h1 {
+            align-self: stretch;
+            border-bottom: 2px solid rgb(0, 0, 0);
+            text-align: center;
+            padding: 1rem;
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .25rem;
+        }
+        .links a {
+            text-decoration: none;
+            background: rgb(200, 216, 228);
+            color: rgb(0, 0, 0);
+
+            border: 2px solid rgb(0, 0, 0);
+            border-radius: 1.5rem;
+            padding: .25rem;
+            padding-left: .35rem;
+            padding-right: .35rem;
+            width: 312px;
+
+            font-size: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .links a:hover {
+            background: rgb(0, 0, 0);
+            color: rgb(200, 216, 228);
+        }
+
+        * {
+            inset: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100dvw;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+        .list {
+            align-self: stretch;
+            border-bottom: 2px solid black;
+            text-align: center;
+            padding: 1rem;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        /* ol {
+            width: fit-content;
+        } */
