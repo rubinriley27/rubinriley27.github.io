@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>NASCAR</title>
+    </head>
+    <body>
+         <style>
+
+            * {
+                inset: 0;
+                margin: 0;
+                padding: 0;
+                font-size: 1.25rem;
+            }
+
+            body {
+                overflow-x: hidden;
+                scroll-behavior: smooth;
+            }
+
+            .parallax {
+                position: relative;
+
+                width: 100dvw;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .bg {
+                position: absolute;
+                background-image: url("https://www.shutterstock.com/image-vector/daytona-international-speedway-road-course-600nw-2386238813.jpg");
+                background-size: 100%;
+            }
+
+            .fg {
+                width: 800px;
+                background: rgb(190, 190, 190);
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem;
+                gap: 1rem;
+
+                z-index: 100;
+
+                border-left: 2px solid black;
+                border-right: 2px solid black;
+                border-bottom: 2px solid black;
+            }
+
+            .description {
+                font-size: 1rem;
+                font-style: italic;
+            }
+
+            img {
+                border: 2px solid black;
+            }
+            
+
+        </style>
+        <div class="parallax">
+            <div class="bg"></div>
+            <div class="fg">
+                <h1>The History Of NASCAR</h1>
+                <h2>By Riley Rubin</h2>
+                <p>This lesson was because I didn't know what else to do.</p>
+                <h2>By the end of this lesson, you will<br> know roughly how nascar started,<br> and how it turned into what it is today</h2>
+                <ol>
+                    <li>The Origins</li>
+                    <li>The Series</li>
+                    <li>How The Cars Evolved</li>
+                    <li>What It Is Today</li>
+                    <li>Types Of Tracks</li>
+                    <li>Types Of Cars</li>
+                </ol>
+                <h1>The Origins</h1>
+                <p>Before NASCAR became a thing, during prohibition, bootleggers<br> started modifying cars to be able to escape the police. They would<br> modify the engine to be more powerful, take out the passenger<br> and rear seats to store as much liquor as possible, add more<br> suspension springs to handle the extra weight, and put a dirt<br> protecting plate in front of the radiator.These cars would remain<br> looking almost stock on the outside. These people would transport<br> mass amounts of liquor to hidden bars behind normal businesses,<br> and if they were caught, they had no problem running.<br><br> When prohibition ended, the bootleggers still wanted a way to feel<br> the adrenaline of driving as fast as they could.</p>
+
+                <img src="./car.png" width="700" height="250" style="object-fit: cover; object-position: 0% 35%;">
+
+                <em class="description">A bootlegger car that is trying to escape the police</em>
+
+                <img src="./car2.png" width="700" height="450" style="object-fit: cover; object-position: 0% 35%;">
+
+                <em class="description">An example of a bootlegger car looking completely stock from the outside</em>
+
+                <img src="./car3.png" width="700" height="350" style="object-fit: cover; object-position: 0% 35%;">
+
+                <em class="description">A bootlegger that was caught by police</em>
+
+                <h1>The Series</h1>
+                <p>	In 1948, Bill France Sr. founded the National Association for Stock<br> Car Auto Racing (NASCAR) and held the very first race on Daytona<br> Beach, Florida February 15, 1948.<br><br>
+	                The rules stated that the cars had to be strictly “stock”, right off the<br> showroom floor. The only addition that could be made was a paint job<br> to signify the team.
+                </p>
+                <h1>How The Cars Evolved</h1>
+                <p>At first, the cars started to get heavier but with bigger engines. In the<br> 50s, the cars started getting lighter and more sporty, engines kept<br> getting bigger, some cars started reaching 200mph. The newer cars<br> became less and less like stock cars and more like a roll cage with a<br> body. The cars started getting so fast that it became a safety hazard, so<br> rules started regulating the speed.
+                <h1>What It Is Today</h1>
+                <p>Modern nascars are almost entirely roll cage, keeping safety over<br> everything else. They have a thin flexible body that allows the inner<br> parts of the car to do its job in the event of a crash, they also have rear<br> facing roof flaps to try and keep the car on the ground if it were to<br> spin out. These cars are designed specifically with aerodynamics<br> in mind.</p>
+                </p>
+                <h1>Types Of Tracks</h1>
+                <p>There is more to NASCAR than just driving in a circle, sure thats most<br> of it but there are other types of tracks, like Circuit of the Americas and<br> many more, every track is different and they all have their own<br> challenges as well.</p>
+                <h1>Types Of Cars</h1>
+                <p>There is also more than just cars. The cup series, and xfinity series are<br> the most popular, but there is also the craftsman truck series that adds<br> a new tier of car to the list, and a unique one at that.</p>
+                <h1>In Conclusion</h1>
+                <p>NASCAR has more to it than most people realise and the history behind<br> it is very interesting.</p>
+            </div>           
+            
+        </div>
+
+        <script>
+            const bg = document.querySelector(".bg")
+
+            function doParallax() {
+                bg.style.transform = `translateY(${window.scrollY * 0.5}px)`
+            }
+
+            window.addEventListener('scroll', doParallax);
+        </script>
+    </body>
+</html>
+   
+
+
+
