@@ -6,6 +6,7 @@
         <title>Clock</title>
     </head>
     <body>
+        <h1>Clock</h1>
         <div class="container">
             <div id="clock">(00:00:00)</div>
             <br>
@@ -23,11 +24,16 @@
             padding: 0;
         }
 
+        body {
+            overflow:hidden;
+        }
+
         h1 {
             align-self: stretch;
             border-bottom: 2px solid white;
             text-align: center;
             padding: 1rem;
+            box-sizing: border-box;
         }
         .links {
             display: flex;
