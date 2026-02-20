@@ -8,6 +8,7 @@
     <body>
         <h1>Clock</h1>
         <div class="container">
+            <div id="date"></div>
             <div id="clock">(00:00:00)</div>
             <br>
             <div class="links">
@@ -25,7 +26,7 @@
         }
 
         body {
-            overflow:hidden;
+            overflow: hidden;
         }
 
         h1 {
@@ -83,6 +84,10 @@
             font-size: 5rem;
         }
 
+        #date {
+            font-size: 3rem;
+        }
+
     </style>
 
     <script>
@@ -101,6 +106,9 @@
             document.getElementById('clock').textContent =
                 `${hours}:${minutes}:${seconds}`;
         }
+
+        const today = new Date();
+            document.getElementById("date").innerHTML = today.toDateString();
 
         // Run once immediately
         updateClock();

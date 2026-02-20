@@ -4,12 +4,100 @@
         <title>To Do</title>
     </head>
     <body>
+
         <h1>To Do List</h1>
+    <div class = container>    
         <ol id="todo">
 
         </ol>
         <input type="text" id="description">
         <button id="add">Add Item</button>
+        <h4>Click box to remove</h4>
+        <h4>Click item to cross out</h4>
+        <div class="links">
+                <h4>Main Page</h2>
+                <a href="project_index.html">Back to Project Index</a>
+            </div>
+    </div>
+        <style>
+            * {background-color: rgb(59, 84, 122);
+        color: rgb(255, 255, 255);
+            inset: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        h1 {
+            align-self: stretch;
+            border-bottom: 2px solid white;
+            text-align: center;
+            padding: 1rem;
+            box-sizing: border-box;
+            height: fit-content;
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .25rem;
+        }
+        .links a {
+            text-decoration: none;
+            background: rgb(59, 84, 122);
+            color: white;
+
+            border: 2px solid white;
+            border-radius: 1.5rem;
+            padding: .25rem;
+            padding-left: .35rem;
+            padding-right: .35rem;
+            width: 312px;
+
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .links a:hover {
+            background: white;
+            color: rgb(59, 84, 122);
+        }
+
+        * {
+            inset: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100dvw;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            font-size: 1.5rem;
+        }
+
+        li.completed span {
+            text-decoration: line-through;
+            color:rgb(255, 255, 255);
+        }
+
+        li {
+            cursor: pointer;
+        }
+
+        ol {
+            height: 300px;
+            overflow-y: scroll;
+        }
+
+        </style>
 
         <script>
             const todo        = document.getElementById("todo")
@@ -17,9 +105,9 @@
             const description = document.getElementById("description")
 
             function newItem(description) {
-                const li   = document.createElement("li")
-                const cb   = document.createElement("input")
-                const span = document.createElement("span")
+                const li   = document.createElement("li");
+                const cb   = document.createElement("input");
+                const span = document.createElement("span");
 
                 function deleteItem() {
                     todo.removeChild(li)
@@ -27,10 +115,14 @@
 
                 cb .onchange = deleteItem
 
+                //crosses out line
+                span.onclick = () => li.classList.toggle("completed");
+
                 cb.type = "checkbox"
                 span.innerText = description
                 li.appendChild(cb  )
                 li.appendChild(span)
+
                 return li
             }
 

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Alien Invasion</title>
+    </head>
+    <body>
+         <style>
+
+            * {
+                inset: 0;
+                margin: 0;
+                padding: 0;
+                font-size: 1.25rem;
+            }
+
+            body {
+                overflow-x: hidden;
+                scroll-behavior: smooth;
+            }
+
+            .parallax {
+                position: relative;
+
+                width: 100dvw;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .bg {
+                position: absolute;
+                background-image: url("https://cdn.mos.cms.futurecdn.net/HuGGeENt6kGyixe3hT9tnY.jpg");
+                background-size: 100%;
+                z-index: -100;
+            }
+
+            .fg {
+                width: 800px;
+                background: rgb(10, 10, 10);
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem;
+                gap: 1rem;
+                color:rgb(209, 239, 255);
+
+                z-index: 100;
+
+                border-left: 2px solid rgb(209, 239, 255);
+                border-right: 2px solid rgb(209, 239, 255);
+                border-bottom: 2px solid rgb(209, 239, 255);
+
+            }
+
+            .description {
+                font-size: 1rem;
+                font-style: italic;
+                color:rgb(209, 239, 255);
+            }
+
+            img {
+                border: 2px solid rgb(209, 239, 255);
+                display: block;
+            }
+            
+
+        </style>
+        <div class="parallax">
+            <div class="bg"></div>
+            <div class="fg">
+                <h1>Alien Invasion</h1>
+
+                <h2>By Riley Rubin</h2>
+
+                <h1>12/22/1976, Utah, USA</h1>
+
+                <p>It was a quiet morning like any other. I woke up, ate breakfast<br> and went to work. Little did I know, today would change<br> history. I worked at an observatory mainly focused on<br> studying other planets. Just before lunch, me and some of my<br> coworkers noticed something very strange on Mars that none<br> of us could explain. There was a series of flashes, almost<br> identical to a rocket launching, over and over coming from the<br> surface of the red planet. Two at a time, a total of sixteen of<br> these flashes happened, then nothing for about five minutes.<br> What looked like three lasers streamed towards Earth at the<br> speed of light with little to no warning. They were here in a<br> few minutes and stopped instantly upon reaching orbit.</p>
+
+                <img src="./ChatGPT Image Feb 18, 2026, 01_36_16 PM.png" width="700" height="450" style="object-fit: fill; object-position: 0% 35%;">
+
+                <em class="description"></em>
+
+                <h1>The Encounter</h1>
+                <p>The sixteen objects were sitting perfectly still, looking like<br> small blue lights in the sky, barely visible to the naked eye,<br> but upon closer inspection through the telescope were what<br> looked like spaceships. They were triangular with three<br> rocket engines on the back and a blue light centered on the<br> bottom. They were all different sizes and in a formation.<br> Two giant ones in the middle, four slightly smaller ones<br> surrounding them, and ten very small ones scattered around<br> in an organized pattern around the group. One of the big<br> ships launched some kind of drop pod that plummeted<br> towards the ground in a ball of fire. It landed on the side of a<br> back road just out of town. Some of us ran outside, jumped in<br> our cars and started racing down the road. When we arrived<br> at the scene there was a huge crowd of cars and people<br> stopped staring  at the object. I made my way through the<br> crowd until I saw it. There was a strange arrowhead shaped<br> object. It was shiny but not very reflective, like polished<br> aluminum but darker and it had a light blue light on the top.<br> A line of light started at the bottom and slowly moved to the<br> top then two doors opened slowly, revealing the creature inside.</p>
+
+                <img src="./ChatGPT Image Feb 19, 2026, 10_28_46 AM.png" width="700" height="850" style="object-fit: fill; object-position: 0% 35%;">
+
+                <em class="description"></em>
+
+                <h1>Communication</h1>
+                <p>An acidic feeling filled the air as the creature stepped out of<br> the pod without a scratch, despite the rough landing. As it<br> touched the grass, it began to die and the scent of burnt<br> leather was pointing in the direction towards it. The alien was<br> tall with four arms and big hands, it had four eyes and light<br> grey patterned skin that looked very dry. It began looking back<br> and fourth, scanning the crowd of concerned people.</p>
+
+                <img src="./ChatGPT Image Feb 19, 2026, 10_28_49 AM.png" width="700" height="850" style="object-fit: fill; object-position: 0% 35%;">
+
+                <em class="description"></em>
+
+                <h1>The Start Of The End</h1>
+                <p>The county sheriff was among the crowd, previously too<br> stunned to speak, he stood there. He eventually made a<br> decision without thinking, one that would change<br> everything. He drew his sidearm and aimed it at the<br> creature. It immediately made a noise that sounded like a<br> viking war horn and threw something at the sheriff killing<br> him instantly. The ships from above descended through the<br> atmosphere and started opening fire upon every single<br> person they could see. I was thinking quickly and dove<br> under one of the cars next to me as I witnessed mass<br> destruction follow around in every direction. All I could hear<br> was screaming, gunfire, and explosions. I also heard the<br> familiar sound of fighter jets screaming overhead. I peaked<br> out for a second to see one firing missiles at the spaceships,<br> doing absolutely no damage, then getting struck from the sky<br> and plummeting to the ground in a ball of fire. I stayed still<br> under the car until all nearby noises stopped, then climbed out<br> and what I saw was something I couldn’t comprehend.<br> Everything around me was destroyed, collapsed, and on fire.<br> It looked like there was a war that lasted many years, but it<br> happened in only hours.</p>
+
+                <img src="./ChatGPT Image Feb 19, 2026, 10_28_53 AM.png" width="700" height="450" style="object-fit: fill; object-position: 0% 35%;">
+
+                <em class="description"></em>
+                
+            </div>  
+            
+            <h2>Main Page</h2>
+            <a href="project_index.html">Back to Project Index</a>        
+        </div>
+
+        <script>
+            const bg = document.querySelector(".bg")
+
+            function doParallax() {
+                bg.style.transform = `translateY(${window.scrollY * 0.5}px)`
+            }
+
+            window.addEventListener('scroll', doParallax);
+        </script>
+    </body>
+</html>
