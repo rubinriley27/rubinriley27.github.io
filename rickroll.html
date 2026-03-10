@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Rick-Roll-Roulette</title>
+    </head>
+    <body>
+        <style>
+            body {
+                background: #1e1e1e;
+                color: white;
+                font-family: Arial, sans-serif;
+                text-align: center;
+                padding-top: 100px;
+            }
+
+            button {
+                padding: 20px 40px;
+                font-size: 22px;
+                border: 12px;
+                border-radius: 10px;
+                border-color: black;
+                cursor: pointer;
+                background: rgb(98, 0, 0);
+                color: black;
+                transition: 0.2s;
+            }
+
+            button:hover {
+                background: rgb(189, 0, 0);
+                transform: scale(1.05)
+            }
+
+            #result {
+                margin-top: 40px;
+                font-size: 24px;
+            }
+        </style>
+
+        <h1>Try Your Luck</h1>
+
+        <button onclick="roll()">Click Me</button>
+
+        <div id="result"></div>
+
+        <script>
+            function roll() {
+                // randomizes chance
+                const randomNumber = Math.random();
+                const resultDiv = document.getElementById("result");
+
+                // 0.2 = 20% chance
+                // if true run rick roll
+                if (randomNumber < 0.2) {
+                    resultDiv.innerHTML = "YOU HAVE BEEN RICK ROLLED!";
+                    document.body.style.background = "darkred";
+
+                    // Wait 1 second, then redirect
+                    setTimeout(() => {window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";}, 100);
+                // otherwise run "lucky"
+                } else {
+                    resultDiv.innerHTML = "Lucky";
+                    document.body.style.background = "#1e1e1e";
+                }
+            }
+        </script>
+    </body>
+</html>
