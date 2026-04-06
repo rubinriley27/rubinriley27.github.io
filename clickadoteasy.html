@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Click-A-Dot Easy</title>
+        <style>
+            body {
+              margin: 0;
+              overflow: hidden;
+              font-family: Arial, sans-serif;
+              background: #111;
+              color: white;
+            }
+        
+            #scoreboard {
+              position: absolute;
+              top: 10px;
+              left: 900px;
+              font-size: 35px;
+              font-weight: bold;
+              z-index: 1000;
+            }
+
+            #boundary {
+                position: absolute;
+                top: 50px;
+                left: 100px;
+                width: calc(100dvw - 200px);
+                height: calc(100dvh - 100px);
+                border: 2px solid white;
+            }
+            
+            .circle {
+              position: absolute;
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              background: white;
+              cursor: pointer;
+              transition: transform 0.1s;
+            }
+            /* makes slightly bigger when hovering */
+            .circle:hover {
+              transform: scale(1.2);
+            }
+        
+            .clicked {
+              pointer-events: none;
+            }
+
+            #you-win {
+                display: none;
+            }
+
+            #you-win.show {
+                display: block;
+                position: absolute;
+                z-index: 10000000000;
+                left: 50%;
+                top : 50%;
+                translate: -50% -50%;
+                font-size: 150px;
+
+                border: 2px solid white;
+                border-radius: 1.5rem;
+                padding: 1rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+                
+                background: #111;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div id="scoreboard">Score: 0</div>
+        <div id="boundary"></div>
+        <span id="you-win">YOU WIN!</span>
+
+    <script>
+        let score = 0;
+        let spawnInterval = 2500; // start at 2.5 second speed
+        let gameOver = false;
+        let combo = 0
+
+        let comboTimeout = null;
+
+        const paddingX = 100
+        const paddingY = 50
+
+        const scoreboard = document.getElementById('scoreboard');
+        const colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "chartreuse", "mediumseagreen", "cyan", "crimson", "aqua", "lightseagreen", "tomato", "plum"]
+        const youWin = document.getElementById("you-win")
+
+        // updates scoreboard
+        function updateScore() {
+            scoreboard.textContent = 'Score: ' + score;
+
+            if (combo > 0) {
+                scoreboard.textContent += " Combo: " + combo + "!"
+            }
+
+            if (score >= 250) {
+                // stop the game and display "you win"
+
+                gameOver = true
+                youWin.classList.add("show")
+            }
+        }
+
+        // creates a circle
+        function createCircle() {
+            const circle = document.createElement('div');
+            circle.classList.add('circle');
+
+            // randomizes circle size
+            const size = 80 + Math.random() * 80;
+            circle.style.width = size + 'px';
+            circle.style.height = size + 'px';
+
+            // Randomizes location of circle
+            const x = Math.random() * (window.innerWidth  - size - 2 * paddingX) + paddingX;
+            const y = Math.random() * (window.innerHeight - size - 2 * paddingY) + paddingY;
+
+            circle.style.left = x + 'px';
+            circle.style.top = y + 'px';
+
+            // prevents double scoring if clicked multiple times
+            let clicked = false;
+
+            // when circle is clicked, update score
+            circle.addEventListener('click', () => {
+                if (!clicked) {
+                clicked = true;
+                circle.classList.add('clicked');
+
+                // Cancel any pending combo reset
+                if (comboTimeout) {
+                    clearTimeout(comboTimeout);
+                }
+
+                // Start 5-second combo reset timer
+                comboTimeout = setTimeout(() => {
+                    combo = 0;
+                    updateScore();
+                }, 5000); 
+                
+                let i = Math.round(Math.random()*(colors.length-1))
+                let color = colors[i]
+                circle.style.background = color
+
+                score++;
+                combo++;
+                updateScore();
+            }   
+            });
+
+            // displays the circle
+            document.body.appendChild(circle);
+
+            // removes circle after a certain amount of time
+            setTimeout(() => {
+                if (!clicked) {
+                    circle.remove();
+                }
+            }, 2000)        
+        }
+
+        // continues spawning circles
+        function gameLoop() {
+            if(gameOver) return
+
+            createCircle();
+
+            // Speeds up over time
+            spawnInterval *= 0.99;
+            if (spawnInterval < 500) spawnInterval = 500;
+
+            // infinite loop
+            setTimeout(gameLoop, spawnInterval);
+        }
+
+        // starts game
+        gameLoop();
+    </script>
+
+    </body>
+</html>
