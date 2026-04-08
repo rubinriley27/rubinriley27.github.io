@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+       <title>DEVLOG</title>
+   </head>
+   <body>
+       <div class="parallax">
+           <div class="bg"></div>
+           <div class="article">
+               <h1>Whack-A-Dot</h1>
+
+
+               <p>The game concept we have decided to create is called Whack-A-Dot. <br><br> We originally had influence by the well known game Whack-A-Mole.</p>
+
+
+               <img src="./mole.png">
+
+
+               <p>We wanted to go for a time-consuming game where you just click dots until you either fill up the screen, or you can reach a certain amount of dots clicked. <br><br> This week we started off by placing the overall border where the dots can spawn. Then we made it to where if a white dot gets clicked, it will turn into one of the random colors that we listed in the code. If you fail to click the white dot in time, it will disappear. Our game also includes multiple modes that involve different speeds and dot sizes. <br><br> Once you get into our game, you will be brought to the main menu where you can choose to either play or quit. Once you hit play, then you will be directed to the difficulty page where you can choose difficulties from easy to mental. This is an example of what we have so far:</p>
+
+
+               <img src="./menu.png">
+               <img src="./diff.png"><br>
+
+
+               <p>Once you have selected the difficulty, the game starts off with a single white dot and progressively gets faster.When you get to click a dot it will change colors and stay there for the remainder of the game. This is what our gameplay looks like so far:</p>
+
+
+               <img src="./start.png">
+               <img src="./mid.png"><br>
+
+
+               <p>Each difficulty will have different speeds and also different goals you need to hit. For example, the easiest difficulty will have a goal of 250 dots clicked, medium difficulty will have the goal set to 500, hard difficulty is set to 750, then the final difficulty will set it all the way to 2000 dots required. After you finally reach you're goal, then you will get the ending screen, simply saying that you've won:</p>
+
+
+               <img src="./end.png">
+           </div>
+       </div>
+
+
+       <script>
+           const bg = document.querySelector(".bg")
+
+
+           function doParallax() {
+               bg.style.transform = `translateY(${window.scrollY * 0.5}px)`
+           }
+
+
+           window.addEventListener('scroll' , doParallax);
+       </script>
+
+
+       <style>
+           * {
+               inset: 0;
+               margin: 0;
+               padding: 0;
+           }
+           h1 {
+               font-size: 42px;
+               text-align: center;
+               margin-bottom: 20px;
+               border-bottom: 3px solid #474747;
+               padding-bottom: 10px;
+           }
+
+
+           body {
+               overflow-x: hidden;
+               scroll-behavior: smooth;
+           }
+
+
+           .article {
+               width: 1000px;
+               background: white;
+
+
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+               padding: 2rem;
+               gap: 1rem;
+               color: black;
+
+
+               z-index: 100;
+
+
+               border-left: 2px solid black;
+               border-right: 2px solid black;
+               border-bottom: 2px solid black;
+           }
+
+
+           p {
+               font-size: 24px;
+               text-align: justify;
+               padding: 0px 96px 0px 96px;
+           }
+
+
+           img {
+               width: 100%;
+               max-width: 800px;
+               border-radius: 8px;
+               border: 2px solid black;
+
+
+               box-shadow: 0px 6px 15px black;
+           }
+
+
+           .parallax {
+               position: relative;
+
+
+               width: 100dvw;
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+           }
+
+
+           .bg {
+               position: absolute;
+               background-image: url("https://t3.ftcdn.net/jpg/14/15/40/32/360_F_1415403214_ZjMQoier3mFgoEcPsO9L69lYEGkieAMo.jpg");
+               background-size: 100%;
+               z-index: -100;
+           }
+
+
+       </style>
+   </body>
+</html>
